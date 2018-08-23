@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import com.sap.cloud.s4hana.examples.HelloWorldServlet;
 import com.sap.cloud.sdk.testutil.MockUtil;
@@ -49,4 +50,51 @@ public class HelloWorldServletTest
         final String body = given().get("/hello").body().asString();
         assertThat(body).isEqualToIgnoringCase("Hello World!");
     }
+
+    @Test
+    public void testService1()
+    {
+        boolean loop = false;
+        long startTime = System.currentTimeMillis();
+        while(loop) {
+            final String body = given().get("/hello").body().asString();
+            assertThat(body).isEqualToIgnoringCase("Hello World!");
+
+            final long now = System.currentTimeMillis();
+            if(now >= (startTime + TimeUnit.MINUTES.toMillis(1)));
+        }
+        System.out.println("End of test 1");
+    }
+
+    @Test
+    public void testService2()
+    {
+        boolean loop = false;
+        long startTime = System.currentTimeMillis();
+        while(loop) {
+            final String body = given().get("/hello").body().asString();
+            assertThat(body).isEqualToIgnoringCase("Hello World!");
+
+            final long now = System.currentTimeMillis();
+            if(now >= (startTime + TimeUnit.MINUTES.toMillis(2)));
+        }
+        System.out.println("End of test 2");
+    }
+
+    @Test
+    public void testService3()
+    {
+        boolean loop = false;
+        long startTime = System.currentTimeMillis();
+        while(loop) {
+            final String body = given().get("/hello").body().asString();
+            assertThat(body).isEqualToIgnoringCase("Hello World!");
+
+            final long now = System.currentTimeMillis();
+            if(now >= (startTime + TimeUnit.MINUTES.toMillis(3)));
+        }
+        System.out.println("End of test 3");
+    }
+
+
 }
