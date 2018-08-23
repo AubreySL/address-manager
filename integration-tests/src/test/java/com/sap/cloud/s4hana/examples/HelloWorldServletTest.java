@@ -54,14 +54,15 @@ public class HelloWorldServletTest
     @Test
     public void testService1()
     {
-        boolean loop = false;
         long startTime = System.currentTimeMillis();
-        while(loop) {
+        while(true) {
             final String body = given().get("/hello").body().asString();
             assertThat(body).isEqualToIgnoringCase("Hello World!");
 
             final long now = System.currentTimeMillis();
-            if(now >= (startTime + TimeUnit.MINUTES.toMillis(1)));
+            if(now >= (startTime + TimeUnit.MINUTES.toMillis(1))) {
+                break;
+            }
         }
         System.out.println("End of test 1");
     }
@@ -69,14 +70,15 @@ public class HelloWorldServletTest
     @Test
     public void testService2()
     {
-        boolean loop = false;
         long startTime = System.currentTimeMillis();
-        while(loop) {
+        while(true) {
             final String body = given().get("/hello").body().asString();
             assertThat(body).isEqualToIgnoringCase("Hello World!");
 
             final long now = System.currentTimeMillis();
-            if(now >= (startTime + TimeUnit.MINUTES.toMillis(2)));
+            if(now >= (startTime + TimeUnit.MINUTES.toMillis(2))) {
+                break;
+            }
         }
         System.out.println("End of test 2");
     }
@@ -84,14 +86,15 @@ public class HelloWorldServletTest
     @Test
     public void testService3()
     {
-        boolean loop = false;
         long startTime = System.currentTimeMillis();
-        while(loop) {
+        while(true) {
             final String body = given().get("/hello").body().asString();
             assertThat(body).isEqualToIgnoringCase("Hello World!");
 
             final long now = System.currentTimeMillis();
-            if(now >= (startTime + TimeUnit.MINUTES.toMillis(3)));
+            if(now >= (startTime + TimeUnit.MINUTES.toMillis(3))) {
+                break;
+            }
         }
         System.out.println("End of test 3");
     }
