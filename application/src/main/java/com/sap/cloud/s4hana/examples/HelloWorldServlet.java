@@ -20,7 +20,7 @@ public class HelloWorldServlet extends HttpServlet
     protected void doGet( final HttpServletRequest request, final HttpServletResponse response )
         throws IOException
     {
-        logger.info("I am running!");
+        //logger.info("I am running!");
         response.getWriter().write("Hello World!");
     }
 }
